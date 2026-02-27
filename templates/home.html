@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HemaToVision</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <div class="header">Welcome to HemaToVision</div>
+
+    <div class="content">
+        <h2>About Blood Cells</h2>
+        <p>
+            Blood cells are vital components of our body, playing essential roles
+            in immunity, oxygen transport, and clotting. Understanding different
+            types is crucial for diagnosis.
+        </p>
+
+        <h2 class="predict-title">Predict Blood Cell Type</h2>
+        <p>Upload a microscopic image to classify the cell using our AI model.</p>
+
+        <form method="POST" enctype="multipart/form-data">
+            <div class="upload-wrapper">
+                <input type="file" name="file" id="file" required>
+            </div>
+            <br>
+            <button type="submit" class="btn">Predict</button>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

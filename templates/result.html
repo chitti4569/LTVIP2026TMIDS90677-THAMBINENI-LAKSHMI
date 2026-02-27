@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HemaToVision Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <div class="header">Analysis Results</div>
+
+    <div class="content">
+        <img src="data:image/png;base64,{{ img_data }}" class="result-img">
+       
+        {% if label == "Image not present in dataset" %}
+            <div class="result-box error-box">
+                <strong>Result:</strong> {{ label }}
+            </div>
+        {% else %}
+            <div class="result-box success-box">
+                <strong>Detected Type:</strong> {{ label }}
+            </div>
+        {% endif %}
+
+        <p><strong>Confidence:</strong> {{ confidence }}</p>
+       
+        <br>
+        <a href="/" class="btn-back">← Analyze Another</a>
+    </div>
+</div>
+
+</body>
+</html>
